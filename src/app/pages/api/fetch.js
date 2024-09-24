@@ -1,4 +1,6 @@
-const apiKey = "e004e5626cb5d81af65f9ee420f42dbb"; // Use an environment variable for this
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+
+ 
 const fetchWeatherData = async (city) => {
   try {
     const response = await fetch(
@@ -18,8 +20,8 @@ const fetchWeatherData = async (city) => {
     };
     return apiData;
   } catch (err) {
-    console.error(err); // Log the error for debugging
-    throw new Error("Failed to fetch weather data"); // Generic message for users
+    console.error(err); 
+    throw new Error("Failed to fetch weather data");
   }
 };
 
